@@ -7,11 +7,11 @@ use Discord\Parts\Channel\Message;
 use Discord\WebSockets\Intents;
 use Discord\WebSockets\Event;
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable('.');
 $dotenv->load();
 
 $discord = new Discord([
-    'token' => getEnv('DISCORD_TOKEN'),
+    'token' => $_ENV['DISCORD_TOKEN'],
     'intents' => Intents::getDefaultIntents()
 //      | Intents::MESSAGE_CONTENT, // Note: MESSAGE_CONTENT is privileged, see https://dis.gd/mcfaq
 ]);
