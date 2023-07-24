@@ -1,0 +1,23 @@
+{
+  "name": "discord/toro",
+  "description": "Toro is a companion package for Discord to connect RCon Rust Server",
+  "type": "project",
+  "require-dev": {
+    "ext-json": "*",
+    "ext-zlib": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Discord\\Toro\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Pablo Morales",
+      "email": "pablofmorales@gmail.com"
+    }
+  ],
+  "require": {
+    "team-reflex/discord-php": "^7.3"
+  }
+}
