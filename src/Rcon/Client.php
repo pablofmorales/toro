@@ -41,15 +41,17 @@ class Client
         int $identifier = self::LAST_INDEX,
         string $name = "WebRcon"): array
     {
-        $this->client->send(json_encode([
+
+        $this->client->send(
+            json_encode([
             'Identifier' => $identifier,
             'Message' => $command,
             'Name' => $name,
-        ]));
+            ])
+        );
 
-        return $this->response = array_map(function ($json) {
-            return json_decode($json, true);
-        }, json_decode($this->client->receive(), true));
+        return json_decode($this->client->receive(), true);
+
     }
 
     public function sendMessage(string $message) : void
@@ -62,49 +64,31 @@ class Client
      */
     public function getPlayers(): array
     {
-        $status = $this->command('status');
+        $status = $this->command('status')['Message'];
+        $status = explode("\n", $status);
 
-        print_r($status);
-exit;
-        if (strlen($status) <= 0) {
-            return [];
-        }
-
-        $count = preg_match_all('/^'
-            . '\s*(?<id>\d*)\s*'
-            . '\"(?<name>.*?)\"\s*'
-            . '(?<ping>\d*)\s*'
-            . '(?<connected>\d*s)\s*'
-            . '(?<addr>[0-9\.]*)$'
-            . '/mi',
-            $status,
-            $matches
-        );
-
-        if ($count <= 0) {
-            return [];
-        }
+        $tmps = array_filter(array_splice($status, 6, count($status)-3));
 
         $players = [];
+        foreach($tmps as $player) {
+            $tmp = array_values(array_filter(explode(" ", $player)));
 
-        for ($i = 0; $i < $count; $i++) {
-            if ($matches['addr'][$i] != 0) {
-                $ip = explode(':', $matches['addr'][$i])[0];
-            } else {
-                $ip = '127.0.0.1';
+            $player = [
+                'steam_id'  => $tmp[0],
+                'name'      => $tmp[1],
+                'ping'      => $tmp[2],
+                'connected' => $tmp[3],
+                'address'   => $tmp[4],
+           //     'violations' => $tmp[16],
+            //    'kicks'   => $tmp[28],
+            ];
+
+            if (count($tmp) === 8) {
+                $player['owner'] = true;
             }
 
-            $players[] = [
-                // Common
-                'id'        => $matches['id'][$i],
-                'name'      => $matches['name'][$i],
-                'ping'      => $matches['ping'][$i],
-                'ip'        => $ip,
+            $players[] = $player;
 
-                // Rust
-                'time'      => $matches['connected'][$i],
-                'steamid'   => $matches['id'][$i],
-            ];
         }
 
         return $players;

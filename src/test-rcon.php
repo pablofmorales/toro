@@ -1,8 +1,6 @@
 <?php
 
 use Discord\Toro\Rcon\Client as RconClient;
-use Knik\GRcon\GRcon;
-use Knik\GRcon\Protocols\RustAdapter;
 
 include 'vendor/autoload.php';
 
@@ -26,6 +24,9 @@ $dotenv->load();
 
 $rcon = new RconClient($_ENV['RCON_HOST'], $_ENV['RCON_PORT'], $_ENV['RCON_PASS']);
 
-//$rcon->command('say "Recorda unirte a nuestro discrod https://discord.gg/nxNzYCHV"'));
+//$rcon->sendMessage("Recorda unirte a nuestro discrod https://discord.gg/nxNzYCHV");
 
-var_dump($rcon->getPlayers());
+print_r($rcon->getPlayers());
+
+
+

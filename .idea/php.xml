@@ -50,13 +50,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/knik/g-rcon" />
-      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
-      <path value="$PROJECT_DIR$/vendor/clue/socket-raw" />
-      <path value="$PROJECT_DIR$/vendor/phrity/net-stream" />
-      <path value="$PROJECT_DIR$/vendor/phrity/websocket" />
       <path value="$PROJECT_DIR$/vendor/phrity/util-errorhandler" />
       <path value="$PROJECT_DIR$/vendor/phrity/net-uri" />
+      <path value="$PROJECT_DIR$/vendor/textalk/websocket" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
