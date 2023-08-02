@@ -46,6 +46,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/knik/g-rcon" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpseclib/phpseclib" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/clue/socket-raw" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phrity/net-stream" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phrity/websocket" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phrity/util-errorhandler" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phrity/net-uri" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
