@@ -21,6 +21,10 @@ $discord->on('ready', function (Discord $discord) {
 
     // Listen for messages.
     $discord->on(Event::MESSAGE_CREATE, function (Message $message, Discord $discord) {
+
+        if (strtolower($message->content) === '!ip') {
+            $message->reply('45.235.98.248:27215');
+        }
         echo "{$message->author->username}: {$message->content}", PHP_EOL;
         // Note: MESSAGE_CONTENT intent must be enabled to get the content if the bot is not mentioned/DMed.
     });
