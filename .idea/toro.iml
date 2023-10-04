@@ -46,6 +46,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/phrity/util-errorhandler" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phrity/net-uri" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/textalk/websocket" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/steamwebapi/php-steam-api" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -2,6 +2,7 @@
   "name": "discord/toro",
   "description": "Toro is a companion package for Discord to connect RCon Rust Server",
   "type": "project",
+  "minimum-stability": "dev",
   "require-dev": {
     "ext-json": "*",
     "ext-zlib": "*"
@@ -20,6 +21,7 @@
   "require": {
     "team-reflex/discord-php": "^7.3",
     "vlucas/phpdotenv": "^5.5",
-    "textalk/websocket": "^1.6"
+    "textalk/websocket": "^1.6",
+    "steamwebapi/php-steam-api": "dev-main"
   }
 }
