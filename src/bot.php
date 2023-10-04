@@ -50,7 +50,7 @@ $discord->on('ready', function (Discord $discord) {
             $counter = 1;
             $result = 'Top 15 jugadores ' . PHP_EOL;
             foreach ($top as $score) {
-                $result .= $counter . "- " . $score['name'] . " Score: " . $score['score'] . PHP_EOL;
+                $result .= $counter . "- " . $score['name'] . PHP_EOL;
 
                 $counter ++;
             }
